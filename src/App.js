@@ -1,6 +1,10 @@
 // import logo from './logo.svg';
 import React from 'react';
 
+const requestManager = {
+  baseUrl: process.env.REACT_APP_REQUEST_MANAGER_URL
+};
+
 
 function App() {
   return (
