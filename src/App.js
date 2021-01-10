@@ -20,8 +20,49 @@ function App() {
     }
 
   }
+
+  // Provide the date format for the app
+  const dateBuilder = (_date) => {
+    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    let day = days[_date.getDay()];
+    let date = _date.getDate();
+    let month = months[_date.getMonth()];
+    let year = _date.getFullYear();
+
+    return `${day} ${date} ${month} ${year}`
+  }
+
+  const dayAndNight = hours => {
+    if (hours >= 7 && hours <= 17) {
+      return "day";
+    } else {
+      return "night";
+    }
+  }
+
+  // Background logic
+  let backgroundToUse = "undefined";
+  // clear, cloud, fog, rain, snow, wind, unbdefined
+  if (weather === "clear") {
+    backgroundToUse = "App clear " + dayAndNight(new Date().getHours());
+  } else if (weather === "cloud") {
+    backgroundToUse = "App cloud " + dayAndNight(new Date().getHours());
+  } else if (weather === "fog") {
+    backgroundToUse = "App fog " + dayAndNight(new Date().getHours());
+  } else if (weather === "rain") {
+    backgroundToUse = "App rain " + dayAndNight(new Date().getHours());
+  } else if (weather === "snow") {
+    backgroundToUse = "App snow " + dayAndNight(new Date().getHours());
+  } else if (weather === "wind") {
+    backgroundToUse = "App wind " + dayAndNight(new Date().getHours());
+  } else {
+    backgroundToUse = "undefined";
+  }
+
   return (
-    <div className="App">
+    <div className={(backgroundToUse !== "undefined") ? backgroundToUse : 'App'}>
       <main>
         <div className="search-box">
           <input
@@ -37,12 +78,20 @@ function App() {
         {(typeof weather.main != "undefined") ? (
           <div>
             <div className="location-box">
-              <div className="location">City name and location info</div>
-              <div className="date">Date info</div>
+              <div className="location">
+                {/* Replace with city name and country response from backend */}
+                {weather.name}, {weather.sys.country}
+              </div>
+              <div className="date">{dateBuilder(new Date())}</div>
             </div>
             <div className="weather-box">
-              <div className="temperature">11°c</div>
-              <div className="weather-condition">Sunny</div>
+              <div className="temperature">
+                {Math.round(weather.main.temp)}°c
+              </div>
+              <div className="weather-condition">
+                {/* Replace with actual response from service */}
+                {weather.weather[0].main}
+              </div>
             </div>
           </div>
         ) : ('')}
