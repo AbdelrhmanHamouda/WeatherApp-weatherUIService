@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-import React from 'react';
+import React, { useState } from 'react';
 
 const requestManager = {
   baseUrl: process.env.REACT_APP_REQUEST_MANAGER_URL
@@ -7,6 +7,19 @@ const requestManager = {
 
 
 function App() {
+  // Get weather data
+  const [query, setQuery] = useState('');
+  const [weather, setWeather] = useState({});
+
+  const search = evt => {
+    if (evt.key === "Enter") {
+      // GraphQL query to request manager service
+      // Clear search box
+      setQuery('')
+
+    }
+
+  }
   return (
     <div className="App">
       <main>
@@ -15,6 +28,9 @@ function App() {
             type="text"
             className="search-bar"
             placeholder="Search for a city..."
+            onChange={e => setQuery(e.target.value)}
+            value={query}
+            onKeyPress={search}
           />
         </div>
         <div className="location-box">
