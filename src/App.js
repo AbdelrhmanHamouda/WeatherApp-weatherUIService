@@ -33,14 +33,19 @@ function App() {
             onKeyPress={search}
           />
         </div>
-        <div className="location-box">
-          <div className="location">City name and location info</div>
-          <div className="date">Date info</div>
-        </div>
-        <div className="weather-box">
-          <div className="temperature">11°c</div>
-          <div className="weather-condition">Sunny</div>
-        </div>
+        {/* Set an if condition to make sure that if the input coming from request is random, ignore it */}
+        {(typeof weather.main != "undefined") ? (
+          <div>
+            <div className="location-box">
+              <div className="location">City name and location info</div>
+              <div className="date">Date info</div>
+            </div>
+            <div className="weather-box">
+              <div className="temperature">11°c</div>
+              <div className="weather-condition">Sunny</div>
+            </div>
+          </div>
+        ) : ('')}
       </main>
     </div>
   );
