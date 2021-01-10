@@ -6,7 +6,13 @@ function App() {
   return (
     <div className="App">
       <main>
-        Hello Weather App!
+        <div className="search-box">
+          <input
+            type="text"
+            className="search-bar"
+            placeholder="Search for a city..."
+          />
+        </div>
       </main>
     </div>
   );
