@@ -14,6 +14,46 @@ body{
   background-position: bottom;
   transition: 0.4s ease;
 }
+/* Setup Backgrounds */
+/* Day */
+.App.clear.day {
+  background-image: url('./assets/day/clear.jpg');
+}
+.App.cloud.day {
+  background-image: url('./assets/day/cloud.jpg');
+}
+.App.fog.day {
+  background-image: url('./assets/day/fog.jpg');
+}
+.App.rain.day {
+  background-image: url('./assets/day/rain.jpg');
+}
+.App.snow.day {
+  background-image: url('./assets/day/snow.jpg');
+}
+.App.wind.day {
+  background-image: url('./assets/day/wind.jpg');
+}
+/* Night */
+.App.clear.night {
+  background-image: url('./assets/night/clear.jpg');
+}
+.App.cloud.night {
+  background-image: url('./assets/night/cloud.jpg');
+}
+.App.fog.night {
+  background-image: url('./assets/night/fog.jpg');
+}
+.App.rain.night {
+  background-image: url('./assets/night/rain.jpg');
+}
+.App.snow.night {
+  background-image: url('./assets/night/snow.jpg');
+}
+.App.wind.night {
+  background-image: url('./assets/night/wind.jpg');
+}
+
 main {
   min-height: 100vh;
   /* Add a little bit of gradient on top of the background */
