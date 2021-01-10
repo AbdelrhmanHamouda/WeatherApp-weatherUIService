@@ -17,6 +17,10 @@ function App() {
           <div className="location">City name and location info</div>
           <div className="date">Date info</div>
         </div>
+        <div className="weather-box">
+          <div className="temperature">11°c</div>
+          <div className="weather-condition">Sunny</div>
+        </div>
       </main>
     </div>
   );
