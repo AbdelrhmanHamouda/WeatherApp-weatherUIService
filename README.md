@@ -6,5 +6,5 @@ This is a UI service for the <https://github.com/users/AbdelrhmanHamouda/project
 
 | Feature | Status |
 | --- | ----------- |
-| GraphQL | `Pending`|
-| Dynamic background| `Pending` |
+| GraphQL | `Ongoing`|
+| Dynamic background| `Ongoing` |
